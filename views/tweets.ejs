@@ -11,11 +11,27 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h2> Welcome To Pony's Twitter, <%= name %></h2>
+        <h2> Welcome to the Bears app <%= name %></h2>
         <h5> The date is <%= date %>, The time is <%= time %></h5>
-        <a href="/tweets" class="btn btn-primary">Show me the tweets!</a>
+        <a href="/bears" class="btn btn-primary">Show me the bears!</a>
       </div>
     </div>
+    <div>
+        <% for(var i = 0; i< tweets.length; i++){ %>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= tweets[i].id %></h3>
+            </div>
+            <div class="panel-body">
+              <%= tweets[i].text %>
+            </div>
+          </div>
+        <% } %>
+    </div>
+
+
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
